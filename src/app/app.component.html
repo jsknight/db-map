@@ -1,0 +1,26 @@
+<div class="card-body d-flex flex-wrap">
+  <div
+    class="col-2 m-5"
+    id="{{ table.domId }}"
+    *ngFor="let table of tables; index as i"
+  >
+    <ul class="list-group">
+      <li
+        class="list-group-item active px-2 py-0 text-center"
+        style="background-color:#F8FAFC;border:1px solid rgba(0, 0, 0, 0.125);border-top-width:5px; color:#333; border-top-color:{{
+          table.color
+        }}"
+        aria-current="true"
+      >
+        {{ table.name }}
+      </li>
+      <li
+        class="list-group-item px-2 py-0"
+        *ngFor="let row of table.rows; index as c"
+        id="{{ table.domId }}{{ row.name }}"
+      >
+        <small>{{ row.name }}</small>
+      </li>
+    </ul>
+  </div>
+</div>
